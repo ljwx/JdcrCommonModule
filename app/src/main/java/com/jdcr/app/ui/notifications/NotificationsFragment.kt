@@ -165,10 +165,10 @@ class NotificationsFragment : Fragment() {
                         .fillMaxWidth()
                         .padding(16.dp)
                 ) {
-                    InfoRow("Kotlin", "1.7.20")
-                    InfoRow("Compose Compiler", "1.3.2")
-                    InfoRow("Java", "11")
-                    InfoRow("AndroidX", "✅")
+                    InfoRow("Kotlin", "2.0.21")
+                    InfoRow("Compose BOM", "2024.11.00")
+                    InfoRow("Java", "17")
+                    InfoRow("AGP", "8.7.3")
                 }
             }
         }
