@@ -14,6 +14,17 @@ kotlinStdlib = "2.0.21" # Kotlin 标准库，包含核心语言功能
 kotlinTest = "2.0.21" # Kotlin 测试库，提供测试相关的工具和注解
 runner = "1.6.2" # AndroidX Test Runner，用于运行 Android 测试
 core = "1.6.1" # AndroidX Test Core 库，提供基础测试功能
+runnerVersion = "1.0.2"
+espressoCoreVersion = "3.0.2"
+appcompatV7 = "28.0.0"
+constraintLayout = "2.0.4"
+livedata = "1.1.1"
+viewmodel = "1.1.1"
+navigationFragment = "1.0.0"
+navigationUi = "1.0.0"
+design = "28.0.0"
+navigationFragmentKtx = "1.0.0"
+navigationUiKtx = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" } # 提供 Android 核心 API 的 Kotlin 扩展，如 Context 和 View 的扩展函数
@@ -36,6 +47,17 @@ kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", versio
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" } # Kotlin 测试库，提供测试相关的注解和工具
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" } # AndroidX 测试运行器，用于执行 Android 测试
 androidx-core = { group = "androidx.test", name = "core", version.ref = "core" } # AndroidX 测试核心库，提供基础测试功能和工具类
+runner = { group = "com.android.support.test", name = "runner", version.ref = "runnerVersion" }
+espresso-core = { group = "com.android.support.test.espresso", name = "espresso-core", version.ref = "espressoCoreVersion" }
+appcompat-v7 = { group = "com.android.support", name = "appcompat-v7", version.ref = "appcompatV7" }
+constraint-layout = { group = "com.android.support.constraint", name = "constraint-layout", version.ref = "constraintLayout" }
+livedata = { group = "android.arch.lifecycle", name = "livedata", version.ref = "livedata" }
+viewmodel = { group = "android.arch.lifecycle", name = "viewmodel", version.ref = "viewmodel" }
+navigation-fragment = { group = "android.arch.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+navigation-ui = { group = "android.arch.navigation", name = "navigation-ui", version.ref = "navigationUi" }
+design = { group = "com.android.support", name = "design", version.ref = "design" }
+navigation-fragment-ktx = { group = "android.arch.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+navigation-ui-ktx = { group = "android.arch.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" } # Android 应用插件，用于构建 Android 应用 APK
