@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.jdcr.app"
-    compileSdk = 35
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.jdcr.app"
         minSdk = 23
-        targetSdk = 35
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 

@@ -1,6 +1,6 @@
 [versions]
-agp = "8.9.1" # Android Gradle 插件，用于构建和打包 Android 应用
-kotlin = "2.0.21" # Kotlin 编程语言核心版本
+agp = "7.4.2" # Android Gradle 插件，用于构建和打包 Android 应用(7.4.2最后一个支持java11的版本)
+kotlin = "1.7.22" # Kotlin 编程语言核心版本(匹配7.4.2)
 coreKtx = "1.16.0" # AndroidX Core 库的 Kotlin 扩展，提供更便捷的 Android API 访问
 junit = "4.14-SNAPSHOT" # JUnit 4 单元测试框架
 junitVersion = "1.2.1" # AndroidX Test JUnit 扩展，提供 Android 专用的测试功能
@@ -62,8 +62,4 @@ navigation-ui-ktx = { group = "android.arch.navigation", name = "navigation-ui-k
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" } # Android 应用插件，用于构建 Android 应用 APK
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" } # Kotlin Android 插件，支持在 Android 项目中使用 Kotlin
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Kotlin Compose 插件，提供对 Jetpack Compose 的编译支持
 android-library = { id = "com.android.library", version.ref = "agp" } # Android 库插件，用于构建 Android 库模块（AAR）
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" } # Kotlin 多平台插件，支持跨 Android、iOS 等平台共享代码
-android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" } # 支持 Kotlin 多平台库与 Android 集成的插件
-kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" } # Kotlin 序列化插件，提供 @Serializable 注解和 JSON 序列化/反序列化功能
