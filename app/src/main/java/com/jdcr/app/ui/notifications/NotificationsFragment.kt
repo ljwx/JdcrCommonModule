@@ -21,6 +21,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jdcr.app.databinding.FragmentNotificationsBinding
 
+// KMP 共享 UI - 从 shared 模块导入跨平台 Composable
+import com.jdcr.shared.ui.SharedScreen
+
 class NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
@@ -171,6 +174,11 @@ class NotificationsFragment : Fragment() {
                     InfoRow("AGP", "8.7.3")
                 }
             }
+            
+            Spacer(modifier = Modifier.height(32.dp))
+            
+            // 显示 KMP 共享 UI
+            SharedScreen()
         }
     }
     

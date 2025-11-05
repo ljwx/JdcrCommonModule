@@ -1,52 +1,58 @@
 [versions]
-agp = "8.7.3" # Android Gradle Plugin - 支持 Java 17
-kotlin = "2.0.21" # Kotlin 最新稳定版
-coreKtx = "1.15.0" # AndroidX Core 库的 Kotlin 扩展
-junit = "4.13.2" # JUnit 4 单元测试框架
-junitVersion = "1.1.5" # AndroidX Test JUnit 扩展
-espressoCore = "3.5.1" # Espresso UI 测试框架核心库
-lifecycleRuntimeKtx = "2.8.7" # AndroidX Lifecycle 库
-activityCompose = "1.9.3" # Activity 与 Jetpack Compose 集成
-composeBom = "2024.11.00" # Jetpack Compose BOM 最新版
-appcompat = "1.7.0" # 提供对旧 Android 版本的兼容功能
-material = "1.12.0" # Material Design 组件库
-constraintlayout = "2.2.0" # ConstraintLayout
-navigation = "2.8.4" # Navigation 组件版本
+agp = "8.9.1" # Android Gradle Plugin 对应 Gradle 8.9+，满足 Kotlin 2.0 的最低要求
+kotlin = "2.0.21" # Kotlin K2 稳定版，Compose Multiplatform 1.7.0 的编译器最低版本
+coreKtx = "1.16.0" # AndroidX Core KTX 最新稳定版，提供常用扩展函数
+junit = "4.14-SNAPSHOT" # 兼容旧单测代码的 JUnit4 版本，来自现有项目惯例
+junitVersion = "1.2.1" # AndroidX Test JUnit 扩展，与 AGP 8.x 兼容
+espressoCore = "3.6.1" # Espresso UI 测试框架，对应 AndroidX Test 最新稳定
+lifecycleRuntimeKtx = "2.9.0" # Lifecycle Runtime KTX，Compose 与生命周期集成用
+activityCompose = "1.10.1" # Activity Compose 嵌入 Compose UI 的桥接层
+composeBom = "2024.09.00" # Jetpack Compose BOM，锁定 Android 侧 Compose 组件版本
+appcompat = "1.7.0" # AppCompat 统一控件主题支持
+material = "1.12.0" # Material Components 旧 View + XML 使用
+kotlinStdlib = "2.0.21" # Kotlin 标准库版本，与 Kotlin 编译器保持一致
+kotlinTest = "2.0.21" # Kotlin 跨平台测试库，同步 Kotlin 版本
+runner = "1.6.2" # AndroidX Test Runner，用于 instrumentation 测试
+core = "1.6.1" # AndroidX Test Core，instrumentation 基础依赖
+composeMultiplatform = "1.7.0" # Compose Multiplatform 最新稳定版，支持 KMP UI
+lifecycleViewmodelKtx = "2.9.0" # ViewModel KTX，Compose 与 ViewModel 交互
+lifecycleLivedataKtx = "2.9.0" # LiveData KTX，遗留 MVVM 逻辑所需
+navigation = "2.8.3" # Navigation 组件最新稳定版，兼容 Material3 BottomNav
+constraintlayout = "2.1.4" # ConstraintLayout XML 布局依赖
 
 [libraries]
-# AndroidX 核心库
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-
-# AndroidX Lifecycle
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleRuntimeKtx" }
-
-# AndroidX Navigation
-androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
-androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
-
-# Jetpack Compose
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-
-# 测试库
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" } # 核心 API Kotlin 扩展
+junit = { group = "junit", name = "junit", version.ref = "junit" } # JVM 单测框架
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" } # AndroidX JUnit 扩展
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" } # Espresso UI 测试
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" } # 生命周期感知组件 KTX
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" } # ViewModel KTX 支持
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" } # LiveData Kotlin 扩展
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" } # Activity 中挂载 Compose 所需
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" } # Fragment 导航组件
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" } # ActionBar/BottomNav 与 NavController 绑定
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" } # XML ConstraintLayout 控件
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" } # AndroidX Compose BOM
+androidx-ui = { group = "androidx.compose.ui", name = "ui" } # Compose UI 核心模块
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" } # Compose 绘制/Canvas 能力
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" } # Compose Preview 调试工具
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" } # Compose Preview API
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" } # Compose 测试 Manifest
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" } # Compose UI Instrumentation 测试
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" } # Compose Material3 组件集
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" } # 老式 XML 与 ActionBar 支持
+material = { group = "com.google.android.material", name = "material", version.ref = "material" } # 传统 Material 控件包
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" } # JVM Kotlin 标准库（供 app 使用）
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" } # KMP 测试依赖
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" } # Instrumentation Test Runner
+androidx-core = { group = "androidx.test", name = "core", version.ref = "core" } # Instrumentation 测试核心 API
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" } # Android 应用插件，用于构建 Android 应用 APK
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" } # Kotlin Android 插件，支持在 Android 项目中使用 Kotlin
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Kotlin Compose 编译器插件（自动管理版本）
-android-library = { id = "com.android.library", version.ref = "agp" } # Android 库插件，用于构建 Android 库模块（AAR）
+android-application = { id = "com.android.application", version.ref = "agp" } # Android App 插件
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" } # Kotlin Android 编译支持
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Kotlin 2.0 的 Compose 编译器插件
+android-library = { id = "com.android.library", version.ref = "agp" } # Android Library 插件（备用）
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" } # Kotlin 多平台核心插件
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" } # KMP Android Library 扩展
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" } # Compose Multiplatform Gradle 插件
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" } # Kotlinx Serialization 插件（未来可选）

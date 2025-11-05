@@ -1,7 +1,10 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// 顶层构建脚本：统一声明子模块可复用的插件别名，具体模块按需 apply
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.compose) apply false
-    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.application) apply false // Android App 模块使用
+    alias(libs.plugins.kotlin.android) apply false // Kotlin Android 编译支持
+    alias(libs.plugins.kotlin.compose) apply false // Kotlin 2.0 Compose 编译器插件
+    alias(libs.plugins.android.library) apply false // 备用 Android Library 模块
+    alias(libs.plugins.kotlin.multiplatform) apply false // Kotlin 多平台核心插件
+    alias(libs.plugins.android.kotlin.multiplatform.library) apply false // Android KMP library 扩展
+    alias(libs.plugins.jetbrains.compose) apply false // Compose Multiplatform Gradle 插件
 }
